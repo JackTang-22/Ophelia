@@ -1,3 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 将删除 .gitignore
 将删除 go/
+将删除 .idea/.gitignore
+将删除 .idea/Ophelia.iml
+将删除 .idea/misc.xml
+将删除 .idea/modules.xml
+将删除 .idea/thriftCompiler.xml
+将删除 .idea/vcs.xml
+将删除 go/src/internal/

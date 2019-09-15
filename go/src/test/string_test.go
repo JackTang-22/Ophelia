@@ -3,6 +3,7 @@ package test
 import (
 	"fmt"
 	"math"
+	"strings"
 	"testing"
 )
 
@@ -20,10 +21,19 @@ func Utf8Format(x int) (uint8, error) {
 }
 
 func TestString(t *testing.T) {
-	fmt.Println('3' - '0')
-	if u, err := Utf8Format(300); err != nil {
-		t.Fatal(u)
-	} else {
-		t.Fatal(err)
+	fmt.Printf("%c", 97)
+	str := "golang"
+	b := []byte(str) // 字符串转换成byte切片 O(1) 底层byte可以引用字符串的底层字节
+	for i, v := range b {
+		t.Logf("%d    %c\n", i, v)
 	}
+	s := string(b) // 同上
+	t.Log(s)
+	str = "i study golang"
+	// 适用于ASCII
+	i := strings.Index(str, " ")
+	firstWord := str[:i]
+	i = strings.LastIndex(str, " ")
+	lastWord := str[i+1:]
+	t.Log(firstWord, lastWord)
 }
