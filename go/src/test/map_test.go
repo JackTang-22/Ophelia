@@ -10,6 +10,8 @@ import (
  * @Description:
  */
 
+// map在64位机器上传递需要8字节，在32位机器上需要4字节
+
 type PersonInfo struct {
 	Id      string
 	Name    string
