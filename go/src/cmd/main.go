@@ -2,7 +2,23 @@ package main
 
 import "fmt"
 
-// main 方法不能带参数  命令行参数通过os.Args获取
 func main() {
-	fmt.Println("hello world")
+	f := icur()
+	fmt.Println(f()) // 1
+	fmt.Println(f()) // 2
+	fmt.Println(f()) // 3
+
+	f1 := icur()
+	f2 := icur()
+	fmt.Println(f1()) // 1
+	fmt.Println(f2()) // 1
+}
+
+func icur() func() int {
+	var x int
+	return func() int {
+		x++
+		return x
+	}
+
 }
