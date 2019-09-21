@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 	f := icur()
@@ -12,6 +16,12 @@ func main() {
 	f2 := icur()
 	fmt.Println(f1()) // 1
 	fmt.Println(f2()) // 1
+	inputReader := bufio.NewReader(os.Stdin)
+	input, err := inputReader.ReadString('\n')
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(input)
 }
 
 func icur() func() int {
@@ -20,5 +30,4 @@ func icur() func() int {
 		x++
 		return x
 	}
-
 }
