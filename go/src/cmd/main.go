@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func init() {
+	fmt.Println("init")
+}
+
 func main() {
 	var x = 1
 	f := icur(x)
@@ -24,7 +28,6 @@ func main() {
 	fmt.Println(input)*/
 	fmt.Println()
 	f3 := outer()
-	fmt.Println(f3())
 	fmt.Println(f3())
 	fmt.Println(f3())
 }
