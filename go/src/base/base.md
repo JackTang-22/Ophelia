@@ -5,7 +5,7 @@ TODO: 2019.10.14-2019.10.20
 4. 方法、接口
 5. goroutine、select、defer、mutex、panic、recover等
 
-
+20191015
 1. golang命令
   -
     build: 编译包和依赖
@@ -24,6 +24,7 @@ TODO: 2019.10.14-2019.10.20
     tool: 运行go提供的工具
     version: 显示go的版本
     vet: 运行go tool vet
+20191016
 2. 关键字
   - 
     if      for     func    case        struct      import               
