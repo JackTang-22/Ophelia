@@ -45,7 +45,7 @@ TODO: 2019.10.14-2019.10.31
             make        delete      complex     panic       append      copy    
             close       len         cap	        real        imag        new   	recover
   -
-3. 变量
+3. 变量 & 常量
   - var variable type
   - var variable = value
   - variable := value 只能在函数内部使用 不能声明全局变量 
@@ -62,6 +62,9 @@ TODO: 2019.10.14-2019.10.31
     var1, var2 = var2, var1
   - _ 用于丢弃某个不需要的值
   - iota 声明初始化值为0
+  - 常量：在编译阶段就确定下来的值，程序运行时无法改变。
+    - 常量赋值是一个编译期行为，右边的值不能出现在运行时才能得到结果的值。
+    - wrong: const HOME = os.GetEnv("HOME")
 3. 数据类型
   - 值类型
     整型    int8,uint               # 基础类型之数字类型
@@ -102,7 +105,11 @@ TODO: 2019.10.14-2019.10.31
      %o	8进制度
      %p	十六进制表示的一个地址值
      %s	字符串
-     %T	输出值的类型，注意int32和int是两种不同的类型，编译器不会自动转换，需要类型转换。 
+     %T	输出值的类型，注意int32和int是两种不同的类型，编译器不会自动转换，需要类型转换。
+  - 数据类型转换 type()  转换可能会溢出， 溢出不会报错 只是结果会是未知的 
+  - 基本数据类型转字符串：fmt.Sprintf() 该函数会返回转换后的字符串
+  - 字符串转基本数据类型：使用包strconv 如果转换成数字的字符串不合法  会返回0
+  - alias golang1.9 之后  type aliasName = type
 4. 流程控制
   - if true{}  if err := value; err != nil {}
   - switch 每一个case后面默认添加了break Go提供fallthrough，代表不跳出switch，后面的语句无条件执行
@@ -186,6 +193,11 @@ TODO: 2019.10.14-2019.10.31
   - 长度是数组类型的一部分 [1]int 和 [2]int 是不同的类型
   - 数组之间是值赋值，传入函数作为参数的时候，传入的是副本，而不是指针
 9. 结构体
-  - 
+  - struct_test.go
+  - 结构体中的数据类型可以是任意类型，存储空间连续，字段按照声明时的顺序存放
+  - 结构体本身和成员都可用于比较，== !=  不支持> <
+  - 结构体成员首字母小写 对包外不可见
+  - p := &Person{} === new(Person) 指针类型
+  - 匿名结构体嵌套 两层都有相同的字段，优先访问上层
 
       

@@ -34,8 +34,20 @@ func TestVariable(t *testing.T) {
 	h := 10.1
 	fmt.Println(isEqual(g, h, 0.00000000001)) // true
 
-	var t1  = complex(1, 2)
-    fmt.Println(t1) // (1+2i)
+	var t1 = complex(1, 2)
+	fmt.Println(t1) // (1+2i)
+
+	type MyInt int      // 类型定义
+	type AliasInt = int // 类型别名，支持使用括号，同时起多个别名
+
+	var a1 MyInt
+	fmt.Printf("a1 type: %T\n", a1) //a1 type: base.MyInt
+
+	var a2 AliasInt
+	fmt.Printf("a2 type: %T\n", a2) //a2 type: int
+
+	const A = 100
+	fmt.Println(A) // 100
 }
 
 func isEqual(a, b, p float64) bool {
