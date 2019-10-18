@@ -273,3 +273,8 @@ func 函数名字 (参数列表) (返回值列表）{
        并且不能手动调用init函数，每一个文件有且仅有一个init函数，初始化过程会根据包的以来关系顺序单线程执行
     3. new函数可以用来创建变量。表达式new(T)将创建一个T类型的匿名变量，初始化为T类型的零值，然后返回变量地址，返回的指针类型为*T
   - 常用函数 TODO 
+12. 错误处理
+  - defer 延迟执行   defer无法处理全局资源 Go的runtime包的func SetFinalize(x, f interface{})函数可以提供类似C++析构函数的机制
+  - Error 错误 golang自带的错误接口类型  errors.New("发生了错误") 自定义错误接口
+  - panic 在程序中手动触发宕机，让程序崩溃 panic之前的defer在panic执行后仍可以执行
+  - recover 恢复机制 由运行时抛出，或者开发者主动触发的panic，可以使用defer和recover实现错误捕捉和处理，让代码在发生崩溃后允许继续执行
