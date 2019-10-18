@@ -278,3 +278,17 @@ func 函数名字 (参数列表) (返回值列表）{
   - Error 错误 golang自带的错误接口类型  errors.New("发生了错误") 自定义错误接口
   - panic 在程序中手动触发宕机，让程序崩溃 panic之前的defer在panic执行后仍可以执行
   - recover 恢复机制 由运行时抛出，或者开发者主动触发的panic，可以使用defer和recover实现错误捕捉和处理，让代码在发生崩溃后允许继续执行
+13. 包和依赖管理
+  - package与import  package 指令在 文件第一行，然后是 import 指令
+  - 在 import 包时，路径从 $GOPATH 的 src 下开始，不用带 src , 编译器会自动从 src 下开始引入
+  - 为了让其它包的文件，可以访问到本包的函数，则该函数名的首字母需要大写，类似其它语言 的 public ,这样才能跨包访问
+  - 在访问其它包函数，变量时，其语法是 包名.函数名
+  - Go是以包的形式来管理文件和项目目录结构
+  - go mod  go1.11后正式引入了go mod功能，在go1.13版本中将会默认启用
+    1. export GO111MODULE=on  开启go mod
+    2. go mod init 项目名 新建项目
+    3. 在项目中可以随时import依赖，当 go run 时候，会自动安装依赖
+    4. 使用go mod后，run产生的依赖源码不会安装在当前项目中，而是安装在：$GOPATH/pkg/mod
+    5. replace 解决包别名的问题
+  - GOPROXY 环境变量，如果设置了该变量，下载源代码时将会通过这个环境变量设置的代理地址，而不再是以前的直接从代码库下载
+
