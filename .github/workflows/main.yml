@@ -17,11 +17,11 @@ jobs:
         with:
           server_address: smtp.qq.com
           server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
+          username: 1452279585@qq.com
+          password: ldesvszdkswcfigh
           subject: Beijing Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
           to: 1452279585@qq.com,278519743@qq.com,ygryzz816@163.com
-          from: GitHub Actions
+          from: 1452279585@qq.com
           content_type: text/html
 

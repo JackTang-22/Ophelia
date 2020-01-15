@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7639fe6-7c0b-4e53-ae55-9aed1b253614" name="Default Changelist" comment="string float integer&#10;TODO collection sort" />
+    <list default="true" id="e7639fe6-7c0b-4e53-ae55-9aed1b253614" name="Default Changelist" comment="string float integer&#10;TODO collection sort">
+      <change afterPath="$PROJECT_DIR$/weather.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,9 +181,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578798661500" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1578796360261">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1579071010895">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1579071010895" />
     <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578796360261" />
     <state x="483" y="301" key="cloudConfig.SelfSettingsDialog" timestamp="1578797020632">
       <screen x="0" y="0" width="1440" height="900" />
