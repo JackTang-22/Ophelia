@@ -1,4 +1,2 @@
 # Ophelia
-golang1.12.9 GoLand Mac OS
-
-happy study every day
+golang1.13 GoLand Mac OS
