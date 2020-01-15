@@ -15,6 +15,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        curl wttr.in/Beijing
         cd go/src/base
         go test
 
