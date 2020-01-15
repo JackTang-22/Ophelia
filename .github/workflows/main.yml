@@ -9,7 +9,7 @@ jobs:
       - name: 'git pull'
         uses: actions/checkout@v1
       - name: 'Get Weather'
-        run: curl -o result.html wttr.in/Beijing
+        run: bash ./weather.sh
       - name: 'Get Date'
         run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
       - name: 'Send mail'
