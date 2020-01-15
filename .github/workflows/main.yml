@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Beijing Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
-          to: 1452279585@qq.com,278519743@qq.com,ygryzz816@163.com
+          to: zygryzz816@163.com
           from: GitHub Actions
-          content_type: text/html
+          content_type: text/html 
 
