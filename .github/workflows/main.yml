@@ -8,14 +8,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        curl wttr.in/Beijing
-        cd go/src/base
-        go test
+      - uses: actions/checkout@v1
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          curl -o result.html wttr.in/Beijing
+          cd go/src/base
+          go test
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          serveraddress: smtp.qq.com
+          serverport: 465
+          username: ${{ secrets.MAILUSERNAME }}
+          password: ${{ secrets.MAILPASSWORD }}
+          subject: Beijing Weather Report
+          body: file://result.html
+          to: yifeng.ruan@gmail.com
+          from: GitHub Actions
+          content_type: text/html
 
