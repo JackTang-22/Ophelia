@@ -3,29 +3,23 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-
+  bot:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          curl -o result.html wttr.in/Beijing
-          cd go/src/base
-          go test
+      - name: ''
+        uses: actions/checkout@v1
+      - name: 'Get Weather'
+        run: bash ./weather.sh
+      - name: 'Get Date'
+        run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
-          serveraddress: smtp.qq.com
-          serverport: 465
-          username: ${{ secrets.MAILUSERNAME }}
-          password: ${{ secrets.MAILPASSWORD }}
-          subject: Beijing Weather Report
+          server_address: smtp.qq.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
           to: 1452279585@qq.com,278519743@qq.com,ygryzz816@163.com
           from: GitHub Actions
