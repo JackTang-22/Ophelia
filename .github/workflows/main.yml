@@ -6,10 +6,10 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
-      - name: ''
+      - name: 'git pull'
         uses: actions/checkout@v1
       - name: 'Get Weather'
-        run: bash ./weather.sh
+        run: curl -o result.html wttr.in/Beijing
       - name: 'Get Date'
         run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
       - name: 'Send mail'
@@ -19,7 +19,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          subject: Beijing Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
           to: 1452279585@qq.com,278519743@qq.com,ygryzz816@163.com
           from: GitHub Actions
