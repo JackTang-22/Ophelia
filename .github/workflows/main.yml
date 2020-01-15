@@ -32,5 +32,5 @@ jobs:
       - name: 'go run test'
         run:
           cd go/src/base
-          go run *.go
+          go test
 
