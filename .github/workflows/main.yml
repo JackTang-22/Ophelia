@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.MAILPASSWORD }}
           subject: Beijing Weather Report
           body: file://result.html
-          to: 1452279585@qq.com;278519743@qq.com;ygryzz816@163.com
+          to: 1452279585@qq.com,278519743@qq.com,ygryzz816@163.com
           from: GitHub Actions
           content_type: text/html
 
